@@ -1,7 +1,7 @@
-<svg width="210" height="28" viewBox="0 0 210 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="5" width="22" height="4" rx="0.5" fill="#5B21B6"/>
-  <rect x="0" y="12" width="17" height="4" rx="0.5" fill="#5B21B6"/>
-  <rect x="0" y="19" width="12" height="4" rx="0.5" fill="#5B21B6"/>
-  <text x="32" y="20" font-family="'Fraunces', Georgia, ui-serif, serif" font-size="18" font-style="italic" font-weight="500" letter-spacing="-0.01em" fill="#0C0A09">Wholesale</text>
-  <text x="123" y="20" font-family="'Fraunces', Georgia, ui-serif, serif" font-size="18" font-weight="600" letter-spacing="-0.01em" fill="#0C0A09">B2B</text>
+<svg width="200" height="28" viewBox="0 0 200 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="2" width="24" height="24" rx="6" fill="#008060"/>
+  <rect x="6" y="9" width="12" height="2.5" rx="1" fill="white"/>
+  <rect x="6" y="13" width="9" height="2.5" rx="1" fill="white"/>
+  <rect x="6" y="17" width="6" height="2.5" rx="1" fill="white"/>
+  <text x="32" y="19" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="-0.015em" fill="#0C0A09">Wholesale B2B</text>
 </svg>

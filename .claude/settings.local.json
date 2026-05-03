@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E '\\\\.\\(tsx|ts|liquid|js\\)$')"
+      "Bash(grep -E '\\\\.\\(tsx|ts|liquid|js\\)$')",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs status)",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs add docs.json index.mdx style.css logo/light.svg logo/dark.svg .claude/settings.local.json)",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs commit -m ' *)"
     ]
   }
 }

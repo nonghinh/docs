@@ -1,17 +1,17 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "willow",
   "name": "2Boys Wholesale B2B Suite",
   "description": "Merchant guide for 2Boys Wholesale B2B Suite — wholesale groups, pricing, registration forms, and storefront setup on Shopify.",
   "colors": {
-    "primary": "#5B21B6",
-    "light": "#A78BFA",
-    "dark": "#4C1D95"
+    "primary": "#008060",
+    "light": "#00A47C",
+    "dark": "#004C3F"
   },
   "fonts": {
     "heading": {
-      "family": "Fraunces",
-      "weight": 500
+      "family": "Inter",
+      "weight": 600
     },
     "body": {
       "family": "Inter"

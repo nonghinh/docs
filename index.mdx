@@ -4,92 +4,118 @@ description: Run wholesale on Shopify — custom price tiers, B2B applications, 
 mode: custom
 ---
 
-<div data-product-guide-index className="flex w-full flex-col gap-16 py-8">
+<div data-product-guide-index className="flex w-full flex-col gap-12 py-8 max-w-6xl">
 
-  <div className="flex flex-col gap-6 max-w-3xl">
-    <span data-editorial-eyebrow>Merchant guide</span>
-    <h1 data-editorial-hero-title>
-      Run wholesale on Shopify, <em>without going Plus.</em>
+  <div className="flex flex-col gap-4 max-w-3xl">
+    <span className="shopify-hero-eyebrow">
+      <Icon icon="store" size={14} color="rgb(var(--primary))" />
+      Merchant guide
+    </span>
+    <h1 className="shopify-hero-title">
+      Run wholesale on Shopify, without going Plus.
     </h1>
-    <p data-editorial-hero-subtitle>
+    <p className="shopify-hero-subtitle">
       Custom price tiers, B2B applications, and checkout discounts — set up in an afternoon, not a quarter.
     </p>
   </div>
 
   <div className="flex flex-col gap-5">
-    <span data-editorial-section-heading>Start here</span>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-      <a href="/getting-started" data-editorial-card data-editorial-card-large className="md:col-span-2">
-        <span data-editorial-eyebrow>01 — Onboarding</span>
+    <span className="shopify-section-heading">Start here</span>
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-7">
+      <a href="/getting-started" className="shopify-hero-card lg:col-span-4">
+        <div className="shopify-hero-card-icon">
+          <Icon icon="rocket" size={22} color="white" />
+        </div>
         <div className="flex flex-col gap-3">
-          <span data-editorial-card-title data-editorial-card-title-lg>
-            Get started in 30 minutes
-          </span>
-          <span data-editorial-card-desc>
-            Install the app, complete the five-step onboarding, and ship your first wholesale group.
+          <span className="shopify-hero-card-eyebrow">Onboarding · 30 minutes</span>
+          <span className="shopify-hero-card-title">Get started in 30 minutes</span>
+          <span className="shopify-hero-card-desc">
+            Install the app, complete the five-step onboarding checklist, and ship your first wholesale group end-to-end.
           </span>
         </div>
+        <span className="shopify-hero-card-cta">
+          Start the guide <Icon icon="arrow-right" size={14} color="white" />
+        </span>
       </a>
-      <a href="/getting-started/key-concepts" data-editorial-card data-editorial-card-large>
-        <span data-editorial-eyebrow>02 — Concepts</span>
-        <div className="flex flex-col gap-3">
-          <span data-editorial-card-title>Key concepts</span>
-          <span data-editorial-card-desc>
-            Groups, customer tags, price resolution, and how discounts reach checkout.
-          </span>
-        </div>
-      </a>
+      <div className="grid grid-cols-1 gap-4 lg:col-span-3">
+        <a href="/groups" className="shopify-card">
+          <div className="shopify-card-icon">
+            <Icon icon="users" size={18} color="rgb(var(--primary))" />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <span className="shopify-card-title">Wholesale groups</span>
+            <span className="shopify-card-desc">Tier your B2B customers with baseline discounts.</span>
+          </div>
+        </a>
+        <a href="/pricing" className="shopify-card">
+          <div className="shopify-card-icon">
+            <Icon icon="tag" size={18} color="rgb(var(--primary))" />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <span className="shopify-card-title">Pricing</span>
+            <span className="shopify-card-desc">Product overrides, volume tiers, best-price-wins.</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
   <div className="flex flex-col gap-5">
-    <span data-editorial-section-heading>Explore</span>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <a href="/groups" data-editorial-card>
-        <div className="flex flex-col gap-3">
-          <span data-editorial-card-title>Wholesale groups</span>
-          <span data-editorial-card-desc>
-            Tier your B2B customers and assign baseline discounts that flow through to checkout.
-          </span>
+    <span className="shopify-section-heading">Common tasks</span>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/groups/create-a-group" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="plus" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Create your first group</span>
+          <span className="shopify-card-desc">Pick a name, set a baseline discount, and start tagging customers.</span>
         </div>
       </a>
-      <a href="/pricing" data-editorial-card>
-        <div className="flex flex-col gap-3">
-          <span data-editorial-card-title>Pricing</span>
-          <span data-editorial-card-desc>
-            Product overrides, volume tiers, and the best-price-wins resolution rule.
-          </span>
+      <a href="/groups/manage-customers" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="user-plus" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Add customers to a group</span>
+          <span className="shopify-card-desc">Assign Shopify customers and let the app handle tagging.</span>
         </div>
       </a>
-    </div>
-  </div>
-
-  <div className="flex flex-col gap-5">
-    <span data-editorial-section-heading>Common tasks</span>
-    <div data-editorial-tasks>
-      <a href="/groups/create-a-group">
-        <span data-editorial-task-title>Create your first wholesale group</span>
-        <span data-editorial-task-arrow>→</span>
+      <a href="/pricing/price-rules" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="sliders-horizontal" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Set up price rules</span>
+          <span className="shopify-card-desc">Override the baseline discount for specific products or variants.</span>
+        </div>
       </a>
-      <a href="/groups/manage-customers">
-        <span data-editorial-task-title>Add customers to a group</span>
-        <span data-editorial-task-arrow>→</span>
+      <a href="/pricing/volume-tiers" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="layers" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Configure volume tiers</span>
+          <span className="shopify-card-desc">Reward bulk orders with deeper, quantity-based discounts.</span>
+        </div>
       </a>
-      <a href="/pricing/price-rules">
-        <span data-editorial-task-title>Set up product price rules</span>
-        <span data-editorial-task-arrow>→</span>
+      <a href="/getting-started/key-concepts" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="book-open" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Understand best-price-wins</span>
+          <span className="shopify-card-desc">Learn how groups, price rules, and volume tiers combine at checkout.</span>
+        </div>
       </a>
-      <a href="/pricing/volume-tiers">
-        <span data-editorial-task-title>Configure volume tier pricing</span>
-        <span data-editorial-task-arrow>→</span>
-      </a>
-      <a href="/getting-started/key-concepts">
-        <span data-editorial-task-title>Understand best-price-wins</span>
-        <span data-editorial-task-arrow>→</span>
-      </a>
-      <a href="/getting-started/onboarding-checklist">
-        <span data-editorial-task-title>Walk the onboarding checklist</span>
-        <span data-editorial-task-arrow>→</span>
+      <a href="/getting-started/onboarding-checklist" className="shopify-card">
+        <div className="shopify-card-icon">
+          <Icon icon="list-checks" size={18} color="rgb(var(--primary))" />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <span className="shopify-card-title">Walk the onboarding checklist</span>
+          <span className="shopify-card-desc">The five steps the dashboard surfaces on day one.</span>
+        </div>
       </a>
     </div>
   </div>
