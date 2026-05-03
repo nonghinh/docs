@@ -4,131 +4,94 @@ description: Run wholesale on Shopify — custom price tiers, B2B applications, 
 mode: custom
 ---
 
-<div data-product-guide-index className="flex w-full flex-col gap-8">
-  <div className="flex max-w-[540px] flex-col gap-2 self-center text-center">
-    <h1 className="font-serif text-[30px] font-medium leading-9 tracking-tight text-gray-900 dark:text-gray-50">
-      2Boys Wholesale B2B Suite
+<div data-product-guide-index className="flex w-full flex-col gap-16 py-8">
+
+  <div className="flex flex-col gap-6 max-w-3xl">
+    <span data-editorial-eyebrow>Merchant guide</span>
+    <h1 data-editorial-hero-title>
+      Run wholesale on Shopify, <em>without going Plus.</em>
     </h1>
-    <p className="text-balance text-sm leading-relaxed tracking-tight text-gray-600 dark:text-gray-400">
-      Run wholesale on Shopify — custom price tiers, B2B applications, and checkout discounts, all without Shopify Plus.
+    <p data-editorial-hero-subtitle>
+      Custom price tiers, B2B applications, and checkout discounts — set up in an afternoon, not a quarter.
     </p>
   </div>
 
-  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-    <Card
-      title={<span className="product-guide-feature-card-title">Get started in 30 minutes</span>}
-      icon="rocket"
-      href="/getting-started"
-      className="product-guide-feature-card"
-      size={64}
-    >
-      <span className="product-guide-feature-card-description">Install the app, complete the five-step onboarding, and ship your first wholesale group.</span>
-    </Card>
-
-    <a
-      href="/groups"
-      className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-    >
-      <Icon icon="users" color="rgb(var(--primary))" size={18} className="shrink-0" />
-      <div className="flex flex-col gap-1">
-        <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Wholesale groups</span>
-        <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-          Tier your B2B customers and assign baseline discounts.
-        </span>
-      </div>
-    </a>
-    <a
-      href="/pricing"
-      className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-    >
-      <Icon icon="tag" color="rgb(var(--primary))" size={18} className="shrink-0" />
-      <div className="flex flex-col gap-1">
-        <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Pricing</span>
-        <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-          Product overrides, volume tiers, and the best-price-wins rule.
-        </span>
-      </div>
-    </a>
-  </div>
-
-  <hr className="border-0 border-t border-border" />
-
-  <div className="flex flex-col gap-4">
-    <h2 className="font-serif text-xl font-medium leading-normal text-gray-900 dark:text-gray-50">Common tasks</h2>
-
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      <a
-        href="/groups/create-a-group"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="plus" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Create your first group</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Pick a name, set a baseline discount, and start tagging customers.
+  <div className="flex flex-col gap-5">
+    <span data-editorial-section-heading>Start here</span>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <a href="/getting-started" data-editorial-card data-editorial-card-large className="md:col-span-2">
+        <span data-editorial-eyebrow>01 — Onboarding</span>
+        <div className="flex flex-col gap-3">
+          <span data-editorial-card-title data-editorial-card-title-lg>
+            Get started in 30 minutes
+          </span>
+          <span data-editorial-card-desc>
+            Install the app, complete the five-step onboarding, and ship your first wholesale group.
           </span>
         </div>
       </a>
-      <a
-        href="/groups/manage-customers"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="user-plus" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Add customers to a group</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Assign Shopify customers and let the app handle tagging.
-          </span>
-        </div>
-      </a>
-      <a
-        href="/pricing/price-rules"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="sliders-horizontal" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Set up price rules</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Override the baseline discount for specific products or variants.
-          </span>
-        </div>
-      </a>
-      <a
-        href="/pricing/volume-tiers"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="layers" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Configure volume tiers</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Reward bulk orders with deeper, quantity-based discounts.
-          </span>
-        </div>
-      </a>
-      <a
-        href="/getting-started/key-concepts"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="book-open" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Understand best-price-wins</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Learn how groups, price rules, and volume tiers combine at checkout.
-          </span>
-        </div>
-      </a>
-      <a
-        href="/getting-started/onboarding-checklist"
-        className="flex flex-col gap-4 rounded-none border bg-gray-50 p-4 outline-none shadow-sm shadow-gray-950/5 transition hover:border-primary hover:shadow-md dark:bg-gray-950 dark:shadow-black/20 dark:hover:border-primary"
-      >
-        <Icon icon="list-checks" color="rgb(var(--primary))" size={18} className="shrink-0" />
-        <div className="flex flex-col gap-1">
-          <span className="font-serif text-base font-medium text-gray-900 dark:text-gray-50">Walk the onboarding checklist</span>
-          <span className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            The five steps the dashboard surfaces on day one.
+      <a href="/getting-started/key-concepts" data-editorial-card data-editorial-card-large>
+        <span data-editorial-eyebrow>02 — Concepts</span>
+        <div className="flex flex-col gap-3">
+          <span data-editorial-card-title>Key concepts</span>
+          <span data-editorial-card-desc>
+            Groups, customer tags, price resolution, and how discounts reach checkout.
           </span>
         </div>
       </a>
     </div>
   </div>
+
+  <div className="flex flex-col gap-5">
+    <span data-editorial-section-heading>Explore</span>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <a href="/groups" data-editorial-card>
+        <div className="flex flex-col gap-3">
+          <span data-editorial-card-title>Wholesale groups</span>
+          <span data-editorial-card-desc>
+            Tier your B2B customers and assign baseline discounts that flow through to checkout.
+          </span>
+        </div>
+      </a>
+      <a href="/pricing" data-editorial-card>
+        <div className="flex flex-col gap-3">
+          <span data-editorial-card-title>Pricing</span>
+          <span data-editorial-card-desc>
+            Product overrides, volume tiers, and the best-price-wins resolution rule.
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div className="flex flex-col gap-5">
+    <span data-editorial-section-heading>Common tasks</span>
+    <div data-editorial-tasks>
+      <a href="/groups/create-a-group">
+        <span data-editorial-task-title>Create your first wholesale group</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+      <a href="/groups/manage-customers">
+        <span data-editorial-task-title>Add customers to a group</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+      <a href="/pricing/price-rules">
+        <span data-editorial-task-title>Set up product price rules</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+      <a href="/pricing/volume-tiers">
+        <span data-editorial-task-title>Configure volume tier pricing</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+      <a href="/getting-started/key-concepts">
+        <span data-editorial-task-title>Understand best-price-wins</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+      <a href="/getting-started/onboarding-checklist">
+        <span data-editorial-task-title>Walk the onboarding checklist</span>
+        <span data-editorial-task-arrow>→</span>
+      </a>
+    </div>
+  </div>
+
 </div>
