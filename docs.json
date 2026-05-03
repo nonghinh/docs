@@ -9,13 +9,8 @@
     "dark": "#4C1D95"
   },
   "fonts": {
-    "heading": {
-      "family": "Fraunces",
-      "weight": 500
-    },
-    "body": {
-      "family": "Inter"
-    }
+    "family": "Inter",
+    "weight": 400
   },
   "favicon": "/favicon.ico",
   "icons": {
