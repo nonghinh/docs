@@ -1,0 +1,76 @@
+---
+title: Volume tiers
+description: Reward larger orders with deeper discounts using quantity-break pricing.
+---
+
+A **volume tier** triggers a deeper discount when the buyer's cart quantity for a product reaches a threshold. Use volume tiers to encourage bulk purchasing.
+
+## How a volume tier works
+
+A volume tier has:
+
+- A **product** (or **variant**) it applies to.
+- A **minimum quantity** — the threshold that triggers the discount.
+- A **discount type** (`percentage` or `fixed amount`) and **value**.
+
+You can stack multiple tiers on the same product:
+
+| Quantity | Discount |
+| --- | --- |
+| 10 | 15% off |
+| 50 | 25% off |
+| 100 | 30% off |
+
+When the cart hits each threshold, the deeper tier replaces the shallower one. Tiers don't compound.
+
+## Quantity is summed per product
+
+Volume tiers count quantity **across all variants of the same product**. If the buyer adds:
+
+- 30 of *T-shirt — Red / Large*
+- 25 of *T-shirt — Blue / Medium*
+
+…the product total is 55. A *50+* tier on *T-shirt* triggers, and **both lines** get the deeper discount.
+
+This matches how wholesale buyers think — they order *55 T-shirts*, not *55 of one SKU*.
+
+## Create a volume tier
+
+1. Go to **Pricing**, then click the group you want to add a tier to.
+2. In the **Volume tiers** card, click **Add tier**.
+3. Choose the scope:
+   - **Product** — counts quantity across all variants.
+   - **Variant** — counts only that variant's quantity.
+4. Pick the product (or variant).
+5. Enter the **minimum quantity**, **discount type**, and **value**.
+6. Click **Save**.
+
+To add more thresholds for the same product, click **Add tier** again with a higher minimum quantity.
+
+<Frame>
+  <img src="/images/pricing/volume-tier-table.png" alt="Volume tier table with multiple quantity thresholds" />
+</Frame>
+
+## Resolution rules
+
+For each cart line, the app:
+
+1. Sums the quantity per product (across variants) and per variant (where variant-level tiers exist).
+2. Picks the highest-threshold tier whose minimum is met.
+3. Compares that tier's price to the group baseline and any product/variant price rules.
+4. Applies the **lowest final price**.
+
+This means a volume tier can be "beaten" by a price rule, or vice versa — you don't need to coordinate them manually.
+
+## Edit or delete a tier
+
+- **Edit** — click the tier's row to change the minimum quantity, type, or value.
+- **Delete** — click the trash icon.
+
+Changes apply within seconds at checkout via the Shopify Function and on product pages via the theme block.
+
+## Tips
+
+- Start with **two or three tiers** per product. Buyers find more than three thresholds confusing.
+- Use **product-level** tiers for most cases. Variant-level tiers are useful only when one variant has a very different cost basis.
+- Combine with the **MOQ** (minimum order quantity) setting to require a baseline quantity before checkout.

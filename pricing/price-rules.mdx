@@ -1,0 +1,61 @@
+---
+title: Price rules
+description: Override a group's baseline discount for individual products or variants.
+---
+
+A **price rule** sets a custom discount on a specific product or variant for one wholesale group. Use price rules when one or two products need a different rate from the group's baseline.
+
+## When to use a price rule
+
+| Situation | Use a price rule? |
+| --- | --- |
+| One premium product needs a smaller discount than the rest of the catalog | ✅ Yes |
+| You want to reward bulk orders with deeper discounts | ❌ Use a [volume tier](/pricing/volume-tiers) instead |
+| The whole group should get a flat discount | ❌ Use the **group baseline** instead |
+| A specific variant (size or color) needs its own price | ✅ Yes — set a variant-level rule |
+
+## Create a price rule
+
+1. Go to **Pricing**, then click the group you want to add a rule to.
+2. In the **Price rules** card, click **Add rule**.
+3. Choose the scope:
+   - **Product** — applies to every variant of the selected product.
+   - **Variant** — applies to one specific variant only.
+4. Use the product picker to select the product (or variant).
+5. Choose the **discount type** (`percentage` or `fixed amount`) and enter the **value**.
+6. Click **Save**.
+
+The rule takes effect within seconds — both on product pages (via the theme block) and at checkout (via the Shopify Function).
+
+<Frame>
+  <img src="/images/pricing/price-rule-form.png" alt="Add price rule form with product picker" />
+</Frame>
+
+## Resolution rules
+
+When a cart line has both a product-level rule and a variant-level rule, **the variant rule wins**. This lets you set a default for a product and then override one specific variant.
+
+Example, for the **Gold** group:
+
+| Layer | Resulting discount on *T-shirt — Red / XL* |
+| --- | --- |
+| Group baseline | 25% |
+| Product rule on *T-shirt* | 20% |
+| Variant rule on *Red / XL* | 15% |
+
+The cart line shows **15% off**. The variant rule overrides the product rule, which itself overrides the baseline.
+
+If a volume tier also applies, the **lowest final price** still wins overall — see [Pricing](/pricing).
+
+## Edit or delete a rule
+
+- **Edit** — click the rule's row to change the discount type or value.
+- **Delete** — click the trash icon. Deleting is immediate; the line falls back to the next layer (variant → product → group baseline).
+
+## Bulk operations
+
+To add price rules for many products at once, repeat the **Add rule** flow. The app does not currently support CSV import or bulk product selection. For very large catalogs, set a sensible group baseline and use price rules only for exceptions.
+
+<Tip>
+  Audit your price rules quarterly. As your catalog evolves, rules can pile up on products you no longer carry.
+</Tip>

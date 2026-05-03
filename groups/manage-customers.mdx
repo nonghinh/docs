@@ -1,0 +1,66 @@
+---
+title: Add customers to a group
+description: Assign customers to wholesale groups, understand the customer-tag bridge, and use a default group.
+---
+
+Once a group exists, populate it with customers. The app supports two paths: **manual assignment** in the admin, and **automatic assignment** when an application is approved.
+
+## Add customers manually
+
+1. Go to **Customers** in the left navigation.
+2. Click **Add customer**.
+3. In the search field, type a name or email. Results come from your live Shopify customer list.
+4. Select one or more customers, choose the **target group**, then click **Add**.
+
+The app:
+
+1. Creates a `GroupCustomer` row linking the customer to the group.
+2. Writes the tag `wholesale-{slug}` to the customer in Shopify.
+3. The customer immediately starts seeing wholesale prices on the storefront and at checkout.
+
+<Frame>
+  <img src="/images/groups/add-customer-modal.png" alt="Add customer modal with Shopify customer search" />
+</Frame>
+
+## Move a customer to a different group
+
+1. From the **Customers** list, find the customer and click the row.
+2. Select a new group from the dropdown.
+3. Click **Save**.
+
+The app removes the old `wholesale-*` tag and writes the new one.
+
+## Remove a customer from wholesale
+
+Set the customer's group to **None**. The app removes the `wholesale-*` tag and the customer reverts to retail pricing immediately.
+
+## Customer tag bridge
+
+Every wholesale customer carries a tag like `wholesale-silver`. This tag is what the Shopify checkout function reads to decide which group's pricing applies.
+
+Two rules to keep in mind:
+
+- **Don't edit `wholesale-*` tags directly in Shopify Admin.** The app and Shopify will get out of sync.
+- **Don't reuse the prefix `wholesale-` for any other tag.** The app treats every tag with that prefix as a wholesale tag.
+
+→ See [Key concepts](/getting-started/key-concepts) for the full discount-resolution flow.
+
+## Default group
+
+You can designate one group as the **default**. When set, customers approved through a registration form land in the default group unless the form specifies a different target.
+
+To set a default group:
+
+1. Go to **Settings → Shop settings**.
+2. Under **Default group**, choose the group from the dropdown.
+3. Click **Save**.
+
+Setting a default does **not** retroactively assign existing customers — it only affects future approvals.
+
+## What a customer sees
+
+Once tagged, a wholesale customer sees:
+
+- Wholesale prices on product pages (if the **Wholesale price** block is installed in your theme).
+- Wholesale prices in the cart and at checkout — always, handled by the Shopify Function.
+- A wholesale account dashboard at `/apps/wholesale/account`.

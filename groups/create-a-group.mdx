@@ -1,0 +1,51 @@
+---
+title: Create a wholesale group
+description: Walk through the new-group form, including discount type, priority, and auto-tagging.
+---
+
+Creating a group takes about a minute. After saving, the group is immediately available — but it has no customers and no pricing rules until you add them.
+
+## Steps
+
+1. From the dashboard, go to **Groups** in the left navigation.
+2. Click **Create group**.
+3. Fill in the form:
+
+   | Field | Notes |
+   | --- | --- |
+   | **Name** | Customer-facing label (for example, *Silver tier*). |
+   | **Slug** | Auto-generated from the name. Edit only if you have a reason — the slug becomes part of the customer tag. |
+   | **Discount type** | Choose **Percentage** or **Fixed amount**. |
+   | **Discount value** | Enter `20` for 20%, or `10` for $10. |
+   | **Priority** | Leave at `0` unless you operate overlapping groups. Higher numbers win ties. |
+   | **Auto-tag customers** | Keep this **on**. The app writes `wholesale-{slug}` to every customer assigned to the group. |
+   | **Active** | Keep on. Toggle off to disable pricing without deleting the group. |
+
+4. Click **Save**.
+
+The group now appears in the **Groups** list with a customer count of `0`.
+
+<Frame>
+  <img src="/images/groups/create-group.png" alt="Create wholesale group form" />
+</Frame>
+
+## What happens after saving
+
+- A Shopify-compatible slug is reserved (the app rejects duplicate slugs).
+- The group is added to the metafield synced to the checkout function.
+- The group is selectable as the **Assign to group** target on registration forms.
+
+## Edit or delete a group
+
+- **Edit** — click the group's row and change any field. Renaming the group does **not** rename the slug; slug changes would orphan customer tags.
+- **Delete** — only allowed when the group has zero customers. Move customers to another group first (see [Add customers](/groups/manage-customers)).
+
+<Warning>
+  Avoid changing the slug after a group has customers. The customer tag is tied to the slug, and renaming would leave existing customers tagged with a slug that no longer matches any group.
+</Warning>
+
+## Tips
+
+- Start with **three tiers** — for example, *Silver / Gold / VIP* at 10% / 20% / 30%. You can refine later.
+- Use **fixed-amount** discounts only when prospects expect a specific dollar amount (rare). Percentage discounts scale better as your catalog grows.
+- Set **priority** explicitly only if you allow customers to belong to multiple groups (uncommon).

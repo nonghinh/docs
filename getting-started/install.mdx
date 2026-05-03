@@ -1,0 +1,41 @@
+---
+title: Install the app
+description: Install 2Boys Wholesale B2B Suite from the Shopify App Store and review the scopes it requests.
+---
+
+## Install from the Shopify App Store
+
+1. Open the **2Boys Wholesale B2B Suite** listing in the Shopify App Store.
+2. Click **Add app**.
+3. Select the store you want to install on, then click **Install**.
+4. Review the requested scopes (see below) and click **Install app**.
+
+After installation, Shopify redirects you to the app dashboard inside Shopify Admin.
+
+<Frame>
+  <img src="/images/getting-started/install-permissions.png" alt="Shopify install screen showing the app's requested scopes" />
+</Frame>
+
+## Required Shopify scopes
+
+The app requests the following scopes during OAuth:
+
+| Scope | Why it's needed |
+| --- | --- |
+| `read_products`, `write_products` | Read product catalog and write metafields used by the checkout discount function. |
+| `read_customers`, `write_customers` | Look up customers and add the `wholesale-{slug}` tag that activates pricing. |
+| `read_orders` | Match wholesale orders for the revenue dashboard. |
+| `read_discounts`, `write_discounts` | Manage the Shopify Function discount that applies wholesale prices at checkout. |
+| `read_metaobjects`, `write_metaobjects` | Store form configurations and translations. |
+| `read_themes` | Detect when the active theme changes so the app can re-prompt you to verify the storefront block. |
+| `read_content`, `read_locales` | Render storefront forms and translate them per locale. |
+
+If Shopify ever shows a *Scope updated* banner, click **Update app** to grant the new permissions — the app cannot operate with partial scopes.
+
+## After installing
+
+The dashboard opens with a five-step **Setup checklist**. Work through it from top to bottom — see [Onboarding checklist](/getting-started/onboarding-checklist) for what each step does.
+
+<Note>
+  The app installs immediately on the **Free plan**. Paid plans are listed under **Billing** but no charge applies until you upgrade.
+</Note>

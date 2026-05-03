@@ -1,0 +1,73 @@
+---
+title: Key concepts
+description: Groups, customer tags, price resolution, and how the app applies wholesale discounts at checkout.
+---
+
+Five concepts cover almost everything the app does. Read this once and the rest of the docs will read more easily.
+
+## Wholesale group
+
+A **wholesale group** (sometimes called a *tier*) is a named bucket of customers that share the same baseline discount and pricing rules.
+
+A group has:
+
+- A **name** and **slug** — the slug is used in the customer tag.
+- A **discount type** — `percentage` or `fixed`.
+- A **discount value** — for example, `20` for 20% off, or `10` for $10 off.
+- A **priority** — used to break ties when a customer somehow ends up in two groups.
+- Optional **price rules** and **volume tiers** that override the baseline.
+
+→ [Wholesale groups](/groups)
+
+## Customer tag
+
+A customer becomes "wholesale" by carrying a tag in the format:
+
+```
+wholesale-{group_slug}
+```
+
+For example, a customer in the **Silver** group has the tag `wholesale-silver`.
+
+The tag is the bridge between the app and Shopify checkout. The app writes the tag automatically when you assign a customer to a group; the checkout discount function reads the tag at checkout time to decide which prices apply.
+
+<Warning>
+  Don't manually edit `wholesale-*` tags in Shopify Admin. Always assign customers from the **Customers** page in the app — otherwise the tag and the database can drift out of sync.
+</Warning>
+
+## Price rule
+
+A **price rule** overrides a group's baseline discount for a specific product or variant. For example, the **Silver** group might get 20% off everything *except* one premium product where it gets 10% off.
+
+→ [Price rules](/pricing/price-rules)
+
+## Volume tier
+
+A **volume tier** triggers a deeper discount when the cart quantity for a product reaches a threshold. For example, *buy 50 or more, get 30% off*.
+
+Quantities are summed **across variants of the same product**. If a buyer adds 30 of variant A and 25 of variant B, the product quantity is 55.
+
+→ [Volume tiers](/pricing/volume-tiers)
+
+## Best price wins
+
+When multiple rules could apply to the same cart line — say, a group baseline of 20% plus a product price rule of 25% plus a volume tier at 30% — the app picks **the lowest final price** for the customer. You don't need to disable rules to prevent overlap.
+
+→ [Pricing model overview](/pricing)
+
+## How a discount reaches checkout
+
+<Steps>
+  <Step title="You configure pricing in the app">
+    Define groups, price rules, and volume tiers from the merchant admin.
+  </Step>
+  <Step title="The app syncs to a metafield">
+    Your configuration is written to a shop-level metafield within seconds.
+  </Step>
+  <Step title="The Shopify Function reads at checkout">
+    The discount function inspects the buyer's `wholesale-*` tag and the metafield, then computes the line-level discount.
+  </Step>
+  <Step title="The buyer sees wholesale prices">
+    Discounts appear in the cart and at checkout — no theme code or workflow automation required.
+  </Step>
+</Steps>

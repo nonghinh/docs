@@ -1,0 +1,45 @@
+---
+title: Wholesale groups
+description: Group your wholesale customers into tiers, each with its own baseline discount and pricing rules.
+---
+
+A **wholesale group** is the basic unit of organization in the app. Every wholesale customer belongs to a group, and almost every other feature — price rules, volume tiers, registration forms, customer tags — is scoped to a group.
+
+Most stores run with two to four groups (for example, **Silver**, **Gold**, **VIP**) but you can create as many as you need.
+
+## What a group defines
+
+| Property | Purpose |
+| --- | --- |
+| **Name** | Display label shown in the admin and in storefront badges. |
+| **Slug** | URL-safe identifier used in the customer tag (`wholesale-{slug}`). |
+| **Discount type** | `percentage` or `fixed amount` off the regular price. |
+| **Discount value** | The number — `20` for 20% or `10` for $10. |
+| **Priority** | Tie-breaker if a customer matches multiple groups. Higher priority wins. |
+| **Auto-tag** | When enabled, the app writes the `wholesale-{slug}` tag to every customer in the group. Leave this on. |
+| **Active** | Inactive groups stop applying discounts at checkout but stay in the database. |
+
+## Common workflows
+
+<CardGroup cols={2}>
+  <Card title="Create a group" icon="plus" href="/groups/create-a-group">
+    Walk through the new-group form.
+  </Card>
+  <Card title="Add customers" icon="user-plus" href="/groups/manage-customers">
+    Bulk-assign customers and understand the customer-tag bridge.
+  </Card>
+  <Card title="Set price rules" icon="tag" href="/pricing/price-rules">
+    Override the baseline discount for individual products.
+  </Card>
+  <Card title="Set volume tiers" icon="layers" href="/pricing/volume-tiers">
+    Reward larger orders with deeper discounts.
+  </Card>
+</CardGroup>
+
+## How groups interact with checkout
+
+Each group's pricing is compiled into a shop-level metafield that the Shopify Function discount reads at checkout. When a customer with the tag `wholesale-silver` checks out, the function applies the **Silver** group's pricing.
+
+If a customer somehow has two `wholesale-*` tags, the group with the higher **priority** value wins. If priorities are equal, the most recently updated group wins.
+
+→ [Key concepts](/getting-started/key-concepts) covers the full discount-resolution flow.

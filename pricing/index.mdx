@@ -1,0 +1,67 @@
+---
+title: Pricing
+description: How wholesale pricing is computed — the baseline group discount, product overrides, volume tiers, and the "best price wins" rule.
+---
+
+The app computes wholesale prices from up to **three layers** for every cart line. The lowest final price wins.
+
+## The three pricing layers
+
+<Steps>
+  <Step title="Group baseline discount">
+    Every wholesale group has a baseline discount (for example, 20% off). It applies to every product unless overridden.
+
+    → [Wholesale groups](/groups)
+  </Step>
+  <Step title="Product or variant price rule">
+    A price rule pins a specific discount for one product or one variant inside the group. Use this for products that need a different rate.
+
+    → [Price rules](/pricing/price-rules)
+  </Step>
+  <Step title="Volume tier">
+    A volume tier triggers a deeper discount when the cart quantity for a product crosses a threshold (for example, *50+ units → 30% off*).
+
+    → [Volume tiers](/pricing/volume-tiers)
+  </Step>
+</Steps>
+
+## Best price wins
+
+For each cart line, the app evaluates every layer that could apply, then picks the **lowest final price**. You don't need to disable layers to prevent overlap.
+
+### Example
+
+The customer is in the **Silver** group. They add 60 units of *T-shirt — Blue / Large* to their cart.
+
+| Layer | Resulting discount on T-shirt |
+| --- | --- |
+| Silver baseline | 20% off |
+| Price rule for *T-shirt* | 25% off |
+| Volume tier *50+ units of T-shirt* | 30% off |
+
+The cart line shows **30% off** — the deepest discount. The other two layers don't compound; they're alternatives.
+
+## How quantity is counted for volume tiers
+
+Volume tiers count quantity **per product**, summed across variants. In the example above, the customer could mix variants:
+
+- 30 of *Blue / Large*
+- 30 of *Black / Medium*
+
+The product total is 60, the volume tier triggers, and both lines get 30% off.
+
+This behavior matches how wholesale buyers think — they buy *60 T-shirts*, not *60 of one SKU*.
+
+## Where pricing is enforced
+
+| Surface | What enforces the price |
+| --- | --- |
+| **Product page** | The **Wholesale price** theme block fetches pricing from the app proxy and renders the discounted price. |
+| **Cart and checkout** | The Shopify Function discount reads the shop-level metafield and applies line-level discounts. |
+| **Customer account** | The wholesale account dashboard at `/apps/wholesale/account` shows the customer's group and tier. |
+
+The product page and checkout are independent surfaces — the discount function is the source of truth at checkout. The theme block is for transparency on the product page.
+
+## Sync to checkout
+
+After you change a group, price rule, or volume tier, the app pushes the new configuration to a shop-level metafield within seconds. If the dashboard shows a sync warning, you can trigger a manual sync from **Operations → Discount sync**.
