@@ -5,7 +5,10 @@
       "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs status)",
       "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs add docs.json index.mdx style.css logo/light.svg logo/dark.svg .claude/settings.local.json)",
       "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs commit -m ' *)",
-      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs log --oneline -4)"
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs log --oneline -4)",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs add docs.json)",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs commit --no-edit)",
+      "Bash(git -C /Users/hinh/Desktop/Projects/Shopify/Wholesale-b2b/docs log --oneline --graph -8)"
     ]
   }
 }
